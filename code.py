@@ -74,18 +74,22 @@ def execute_cmd(cmd):
 
 
 
-#Start
-r = sr.Recognizer()
-m = sr.Microphone(device_index=1)
-with m as source:
-    r.adjust_for_ambient_noise(source)
+def program():
+    #Start
+    r = sr.Recognizer()
+    m = sr.Microphone(device_index=1)
+    with m as source:
+        r.adjust_for_ambient_noise(source)
 
-speak_engine = pyttsx3.init()
+    speak_engine = pyttsx3.init()
 
-voices = speak_engine.getProperty('voices')
-speak_engine.setProperty('voice', voices[0].id)
-speak('Добрый день, хозяин')
-speak('Джесси слушает')
-stop_listening = r.listen_in_background(m, callback)
-while True:
-    time.sleep(0.1) #infinity loop
+    voices = speak_engine.getProperty('voices')
+    speak_engine.setProperty('voice', voices[0].id)
+
+    speak('Добрый день, хозяин')
+    speak('Джесси слушает')
+    stop_listening = r.listen_in_background(m, callback)
+    while True:
+        time.sleep(0.1) #infinity loop
+
+program()
