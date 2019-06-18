@@ -20,6 +20,7 @@ opts = {
 
 #Functions
 def speak(what):
+    speak_engine = pyttsx3.init()
     print( what )
     speak_engine.say(what)
     speak_engine.runAndWait()
@@ -92,4 +93,6 @@ def program():
     while True:
         time.sleep(0.1) #infinity loop
 
-program()
+if __name__ == '__main__':
+    while True:
+        program()
