@@ -91,8 +91,6 @@ def program():
     speak('Джесси слушает')
     stop_listening = r.listen_in_background(m, callback)
     while True:
-        time.sleep(0.1) #infinity loop
+        time.sleep(0.1)
 
-if __name__ == '__main__':
-    while True:
-        program()
+program
