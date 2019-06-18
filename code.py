@@ -93,4 +93,4 @@ def program():
     while True:
         time.sleep(0.1)
 
-program
+program()
